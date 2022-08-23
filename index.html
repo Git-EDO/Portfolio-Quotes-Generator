@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content">
+    <div class="content-body">
+      <div class="quote">
+        Выберите страну чтобы получить цитату от автора данной страны или сгенерируйте случайную цитату
+        </div>
+        <div class="author">
+        </div>
+        <div class="generate">
+          <a href="#">
+            Сгенерировать
+          </a>
+        </div>
+        <div class="select">
+          <button class="select-body">Выбрать страну</button>
+          <div class="select-options">
+            <div class="option">Все страны</div>
+          </div>
+          <input type="text" class="select-body-hidden" data-value="">
+        </div>
+    </div>
+<div class="popup">
+  <form class="form">
+    <div class="new-quote-input">
+      <input type="text" id="new-quote" placeholder="Новая цитата" required>
+      <label for="new-quote"></label>
+    </div>
+    <div class="new-author-input">
+      <input type="text" id="new-author" placeholder="Автор новой цитаты" required>
+      <label for="new-author"></label>
+    </div>
+    <div class="new-country-input">
+      <input type="text" id="new-country" placeholder="Страна автора цитаты" required>
+      <label for="new-country"></label>
+    </div>
+    <button class="add-btn">Добавить</button>
+  </form>
+</div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
