@@ -21,6 +21,7 @@
   height: 40%;
   box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
   border-radius: 10px;
+  padding: 20px 35px;
 }
 .quote {
   font-family: 'Marck Script', cursive;
@@ -38,8 +39,18 @@
   margin: 20px 0;
   font-weight: 600;
 }
-.generate {
+.manage-buttons {
+  display: flex;
   margin-top: 20px;
+}
+.add a {
+  padding: 15px 25px;
+  border: 1px solid #333;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-left: 20px;
 }
 .generate a {
   padding: 15px 25px;
@@ -77,13 +88,15 @@
 }
 .select-options {
   position: absolute;
-  top: 50px;
+  top: 70px;
   left: 0px;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #333;
   width: 100%;
   display: none;
+  overflow-y: auto;
+  max-height: 200px;
 }
 .select-options.active {
   display: block;
@@ -107,14 +120,64 @@
 .select-body-hidden {
   display: none;
 }
+.popup {
+  display: flex;
+  visibility: hidden;
+  transform: scale(0);
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background-color: rgba(0,0,0,0.7);
+  transition: 0.5s ease;
+}
+.popup.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
 .form {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  position: relative;
 }
-.form > div:not(:first-child) {
+.close-popup {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+.form-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  background-color: #fff;
+}
+.form-body > div:not(:first-child) {
   margin-top: 20px;
 }
-button {
+.add-btn {
   margin-top: 20px;
+  padding: 15px 25px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  color: inherit;
+  border: 1px solid #333;
 }

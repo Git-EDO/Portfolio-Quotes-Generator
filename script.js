@@ -99,15 +99,14 @@ window.onload = function(){
   uniqueCountries.forEach(x => {
     createOption('option', x, dropDown);
   })
-
+}
   // Присваиваем значение выбранной опции в селект
-  let options = document.querySelectorAll('.option');
-  options.forEach(n => n.addEventListener('click', function(){
-  select.innerText = n.innerText;
+let options = document.querySelectorAll('.option');
+dropDown.addEventListener('click', function(e){
+  select.innerText = e.target.innerText;
   select.classList.remove('active');
   dropDown.classList.remove('active');
-}));
-};
+})
 
 // Закрываем селект при клике не по нему
 document.addEventListener('click', function(e){
@@ -122,21 +121,40 @@ let addQuote = document.querySelector('.add-btn');
 let newQuote = document.getElementById('new-quote');
 let newAuthor = document.getElementById('new-author');
 let newCountry = document.getElementById('new-country');
+let popup = document.querySelector('.popup');
+let openPopup = document.querySelector('.add');
+let closePopup = document.querySelector('.close-popup');
+
+openPopup.addEventListener('click', function(e) {
+  e.preventDefault();
+  popup.classList.add('active');
+})
+closePopup.addEventListener('click', function(e) {
+  e.preventDefault();
+  popup.classList.remove('active');
+})
+
 
 addQuote.addEventListener('click', function(){
-  let newQuoteFromForm = {
-    quoteText: newQuote.value,
-    quoteAuthor: newAuthor.value,
-    quoteCountry: newCountry.value,
+  if (newQuote.value === "" || newAuthor.value ==="" || newCountry.value === "") {
+    alert('Заполните все обязательные поля')
+  } else {
+    let newQuoteFromForm = {
+      quoteText: newQuote.value,
+      quoteAuthor: newAuthor.value,
+      quoteCountry: newCountry.value,
+    }
+    let uniqueCountriesArray = Array.from(uniqueCountries);
+    if (uniqueCountriesArray.includes(newCountry.value) === false) {
+      createOption('option', newCountry.value, dropDown);
+      uniqueCountries.add(newQuoteFromForm.quoteCountry);
+    }
+    quotes.push(newQuoteFromForm);
+    newQuote.value === "";
+    newAuthor.value === "";
+    newCountry.value === "";
+    addQuote.innerHTML = "Цитата добавлена";
+    popup.classList.remove('active');
   }
-  let uniqueCountriesArray = Array.from(uniqueCountries);
-  if (uniqueCountriesArray.includes(newCountry.value) === false) {
-    createOption('option', newCountry.value, dropDown)
-    uniqueCountries.add(newQuoteFromForm.quoteCountry);
-  }
-  quotes.push(newQuoteFromForm);
-  console.log(quotes);
-  console.log(uniqueCountries);
-  console.log(uniqueCountriesArray);
 })
 

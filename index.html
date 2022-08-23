@@ -17,10 +17,17 @@
         </div>
         <div class="author">
         </div>
-        <div class="generate">
-          <a href="#">
-            Сгенерировать
-          </a>
+        <div class="manage-buttons">
+          <div class="generate">
+            <a href="#">
+              Сгенерировать
+            </a>
+          </div>
+          <div class="add">
+            <a href="#">
+              Добавить цитату
+            </a>
+          </div>
         </div>
         <div class="select">
           <button class="select-body">Выбрать страну</button>
@@ -32,19 +39,22 @@
     </div>
 <div class="popup">
   <form class="form">
-    <div class="new-quote-input">
-      <input type="text" id="new-quote" placeholder="Новая цитата" required>
-      <label for="new-quote"></label>
+    <div class="close-popup">x</div>
+    <div class="form-body">
+      <div class="new-quote-input">
+        <input type="text" id="new-quote" placeholder="Новая цитата" required>
+        <label for="new-quote"></label>
+      </div>
+      <div class="new-author-input">
+        <input type="text" id="new-author" placeholder="Автор новой цитаты" required>
+        <label for="new-author"></label>
+      </div>
+      <div class="new-country-input">
+        <input type="text" id="new-country" placeholder="Страна автора цитаты" required>
+        <label for="new-country"></label>
+      </div>
+      <button class="add-btn">Добавить</button>
     </div>
-    <div class="new-author-input">
-      <input type="text" id="new-author" placeholder="Автор новой цитаты" required>
-      <label for="new-author"></label>
-    </div>
-    <div class="new-country-input">
-      <input type="text" id="new-country" placeholder="Страна автора цитаты" required>
-      <label for="new-country"></label>
-    </div>
-    <button class="add-btn">Добавить</button>
   </form>
 </div>
   </div>
