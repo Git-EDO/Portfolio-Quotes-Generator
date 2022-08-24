@@ -1,6 +1,6 @@
 # Portfolio-Quotes-Generator
 
-## Learning project
+## Learning native JS project
 
 - Arrays
 - Dynamic created objects
